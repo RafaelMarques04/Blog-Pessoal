@@ -15,22 +15,21 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table(name = "tb_postagens")
 public class Postagem {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotBlank(message = "Este atributo é de preenchimeto obrigatório")
 	@Size(min = 5, max = 100, message = "Esse atributo tem que ter no min 5 e max 100 caracters")
 	private String titulo;
-	
+
 	@NotBlank(message = "Este atributo é de preenchimeto obrigatório")
 	@Size(min = 10, max = 1000, message = "Esse atributo tem que ter no min 10 e max 1000 caracters")
 	private String texto;
-	
+
 	@UpdateTimestamp()
 	private LocalDateTime data;
-	
 
 	public Long getId() {
 		return id;
